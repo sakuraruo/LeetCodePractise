@@ -1,4 +1,4 @@
-package com.sakuraruo.leetcode;
+package com.sakuraruo.leetcode.array;
 
 /****
  * 59 螺旋矩阵

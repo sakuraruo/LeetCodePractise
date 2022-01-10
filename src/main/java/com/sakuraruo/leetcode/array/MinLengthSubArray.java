@@ -1,4 +1,4 @@
-package com.sakuraruo.leetcode;
+package com.sakuraruo.leetcode.array;
 
 /**
  * 209.长度最小的子数组

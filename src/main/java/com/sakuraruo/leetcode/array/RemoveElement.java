@@ -1,4 +1,4 @@
-package com.sakuraruo.leetcode;
+package com.sakuraruo.leetcode.array;
 
 /***
  * LeetCode 第27题移除数组中的元素 用快慢指针实现 最终返回移除之后到底剩余元素个数 也就是慢指针移动的位置
