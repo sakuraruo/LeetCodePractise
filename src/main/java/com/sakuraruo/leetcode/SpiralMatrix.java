@@ -16,6 +16,7 @@ public class SpiralMatrix {
         //需要遍历的次数
         int loop=n/2;
         while(loop-->0){
+
             int i=startx;
             int j=starty;
             for(;i<startx+n-offset;i++){
