@@ -143,6 +143,25 @@ public class LinkedList<T> {
         return list;
     }
 
+    public void removeNthNode(int n){
+        if(n+1>size){
+            throw new IllegalArgumentException();
+        }
+        Node fast = getHead();
+        Node slow=fast.next;
+        for(int i=0;i<n+1;i++){
+            fast=fast.next;
+        }
+        while(fast!=tail){
+            fast=fast.next;
+            slow=slow.next;
+        }
+        //这时候slow就是倒数第n-1个节点
+        Node next = slow.next;
+        slow.next=next.next;
+
+    }
+
     public void setHead(Node<T> head) {
         this.head = head;
     }
@@ -168,15 +187,18 @@ public class LinkedList<T> {
         list.addTail(new Node<Integer>(3));
         list.addHead(new Node<Integer>(1));
         list.addHead(new Node<Integer>(2));
+
         list.printLinkedList();
         list.addIndex(1,new Node<Integer>(4));
         list.printLinkedList();
-        System.out.println("\n");
+        list.removeNthNode(1);
+        list.printLinkedList();
+        /**System.out.println("\n");
         System.out.println(list.getIndex(1).value);
         list.removeIndex(2);
         System.out.println(list.getIndex(2).value);
         list.reverseList(list);
-        list.printLinkedList();
+        list.printLinkedList();*/
 
     }
 
