@@ -1,13 +1,19 @@
 package com.sakuraruo.leetcode.string;
 
+/**
+ * 28 找到子串
+ */
 public class KmpStr {
     private static void getNext(int[] next,String str){
+        // a a b a a
+        // 0 1 0 1 2
         int j=-1;
         next[0]=j;
         char[] chars = str.toCharArray();
         for(int i=1;i<str.length();i++){
             //前后缀不相同
             while(j>=0&&chars[i]!=chars[j+1]){
+                //回退
                 j=next[j];
             }
             //找到相同的前后缀
@@ -16,6 +22,8 @@ public class KmpStr {
             }
             next[i]=j;
         }
+
+
     }
 
     public static int str(String str,String subStr){
@@ -43,6 +51,8 @@ public class KmpStr {
     }
 
     public static void main(String[] args) {
+        int[] ints = new int[12];
+        getNext(ints,"asdfasdfasdf");
         System.out.println(str(new String("aabaabaafa"),new String("aabaaf")));
     }
 }
